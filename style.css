@@ -63,7 +63,7 @@ html, body {
   .courses {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 50px;
     margin: 50px;
   }
   
@@ -74,6 +74,7 @@ html, body {
     padding: 20px 40px 20px 40px;
     background-color: white;
     border-radius: 35px;
+    flex-shrink: 0;
   }
   
   .class-name {
@@ -84,11 +85,22 @@ html, body {
   .class-description {
     font-size: 12px;
   }
+
+
+  .icon {
+    display:inline-block;
+    position: absolute;
+    transform: translate(200px, -65px);
+  }
   
   button {
     padding: 10px;
     margin: 20px;
     width: fit-content;
+    border: 1px #DCDCDC solid;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
     
   }
   
@@ -104,4 +116,62 @@ html, body {
     background-color: #FEBD2F;
     display: flex;
     justify-content: center;
+    padding: 10px;
   }
+
+ @media (max-width: 900px) {
+   .header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0;
+    padding: 0;
+   }
+
+   .header-text {
+    font-size: 10px;
+   }
+
+   .flex-container {
+    margin-bottom: 0px;
+   }
+
+   .courses {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    align-items: center;
+   }
+
+   h2 {
+    font-size: 30px;
+    padding: 2px;
+   }
+
+   .links {
+    display: inline-block;
+    overflow: visible;
+   }
+ }
+
+ @media (max-width: 450px) {
+
+  .courses {
+   display: grid;
+   grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .icon {
+    display:inline-block;
+    position: absolute;
+    transform: translate(150px, -65px);
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
